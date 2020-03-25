@@ -1,0 +1,24 @@
+{
+  "name": "cc3_181206_rundumschlag_gesamtkunstwerk_coenen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "finalhandler": "^1.1.1",
+    "serve-static": "^1.13.2",
+    "sqlite3": "^4.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm init "
+  },
+  "repository": {
+    "type": "git",
+    "url": "C:\\Users\\su-cl\\Documents\\IMD\\P3\\CC3\\CC3_181206_Rundumschlag_Gesamtkunstwerk_Coenen "
+  },
+  "keywords": [
+    "server"
+  ],
+  "author": "susanne",
+  "license": "ISC"
+}

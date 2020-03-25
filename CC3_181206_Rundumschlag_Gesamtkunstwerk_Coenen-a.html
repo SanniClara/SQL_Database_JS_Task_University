@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>
+        CC3 181206 Rundumschlag: Ein Websystem - CodiMD
+    </title>
+    <link rel="icon" type="image/png" href="https://pad.imd.rocks/favicon.png">
+    <link rel="apple-touch-icon" href="https://pad.imd.rocks/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/octicons.min.css" integrity="sha256-4eCms8tUm+iL29tUvmRhNRnz/7lNI4oTtQzqa/uM2dI=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css" integrity="sha256-vtR0hSWRc3Tb26iuN2oZHt3KRUomwTufNIf5/4oeCyg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github-gist.min.css" integrity="sha256-tAflq+ymku3Khs+I/WcAneIlafYgDiOQ9stIHH985Wo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,300italic,300|Source+Serif+Pro|Source+Code+Pro:400,300,500&subset=latin,latin-ext);.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.5;word-wrap:break-word}.markdown-body:after,.markdown-body:before{display:table;content:""}.markdown-body:after{clear:both}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body .absent{color:#c00}.markdown-body .anchor{float:left;padding-right:4px;margin-left:-20px;line-height:1}.markdown-body .anchor:focus{outline:none}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body hr{height:.25em;padding:0;margin:24px 0;background-color:#e7e7e7;border:0}.markdown-body blockquote{padding:0 1em;color:#777;border-left:.25em solid #ddd}.night .markdown-body blockquote{color:#bcbcbc}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body .loweralpha{list-style-type:lower-alpha}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}.night .markdown-body h1,.night .markdown-body h2,.night .markdown-body h3,.night .markdown-body h4,.night .markdown-body h5,.night .markdown-body h6{color:#ddd}.markdown-body h1 .octicon-link,.markdown-body h2 .octicon-link,.markdown-body h3 .octicon-link,.markdown-body h4 .octicon-link,.markdown-body h5 .octicon-link,.markdown-body h6 .octicon-link{color:#000;vertical-align:middle;visibility:hidden}.night .markdown-body h1 .octicon-link,.night .markdown-body h2 .octicon-link,.night .markdown-body h3 .octicon-link,.night .markdown-body h4 .octicon-link,.night .markdown-body h5 .octicon-link,.night .markdown-body h6 .octicon-link{color:#fff}.markdown-body h1:hover .anchor,.markdown-body h2:hover .anchor,.markdown-body h3:hover .anchor,.markdown-body h4:hover .anchor,.markdown-body h5:hover .anchor,.markdown-body h6:hover .anchor{text-decoration:none}.markdown-body h1:hover .anchor .octicon-link,.markdown-body h2:hover .anchor .octicon-link,.markdown-body h3:hover .anchor .octicon-link,.markdown-body h4:hover .anchor .octicon-link,.markdown-body h5:hover .anchor .octicon-link,.markdown-body h6:hover .anchor .octicon-link{visibility:visible}.markdown-body h1 code,.markdown-body h1 tt,.markdown-body h2 code,.markdown-body h2 tt,.markdown-body h3 code,.markdown-body h3 tt,.markdown-body h4 code,.markdown-body h4 tt,.markdown-body h5 code,.markdown-body h5 tt,.markdown-body h6 code,.markdown-body h6 tt{font-size:inherit}.markdown-body h1{font-size:2em}.markdown-body h1,.markdown-body h2{padding-bottom:.3em;border-bottom:1px solid #eee}.markdown-body h2{font-size:1.5em}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{font-size:.85em;color:#777}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol.no-list,.markdown-body ul.no-list{padding:0;list-style-type:none}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}.markdown-body li>p{margin-top:16px}.markdown-body li+li{margin-top:.25em}.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}.markdown-body dl dd{padding:0 16px;margin-bottom:16px}.markdown-body table{display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}.markdown-body table th{font-weight:700}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #ddd}.markdown-body table tr{background-color:#fff;border-top:1px solid #ccc}.night .markdown-body table tr{background-color:#5f5f5f}.markdown-body table tr:nth-child(2n){background-color:#f8f8f8}.night .markdown-body table tr:nth-child(2n){background-color:#4f4f4f}.markdown-body img{max-width:100%;box-sizing:content-box;background-color:#fff}.markdown-body img[align=right]{padding-left:20px}.markdown-body img[align=left]{padding-right:20px}.markdown-body .emoji{max-width:none;vertical-align:text-top;background-color:transparent}.markdown-body span.frame{display:block;overflow:hidden}.markdown-body span.frame>span{display:block;float:left;width:auto;padding:7px;margin:13px 0 0;overflow:hidden;border:1px solid #ddd}.markdown-body span.frame span img{display:block;float:left}.markdown-body span.frame span span{display:block;padding:5px 0 0;clear:both;color:#333}.markdown-body span.align-center{display:block;overflow:hidden;clear:both}.markdown-body span.align-center>span{display:block;margin:13px auto 0;overflow:hidden;text-align:center}.markdown-body span.align-center span img{margin:0 auto;text-align:center}.markdown-body span.align-right{display:block;overflow:hidden;clear:both}.markdown-body span.align-right>span{display:block;margin:13px 0 0;overflow:hidden;text-align:right}.markdown-body span.align-right span img{margin:0;text-align:right}.markdown-body span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}.markdown-body span.float-left span{margin:13px 0 0}.markdown-body span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}.markdown-body span.float-right>span{display:block;margin:13px auto 0;overflow:hidden;text-align:right}.markdown-body code,.markdown-body tt{padding:0;padding-top:.2em;padding-bottom:.2em;margin:0;font-size:85%;background-color:rgba(0,0,0,.04);border-radius:3px}.night .markdown-body code,.night .markdown-body tt{color:#eee;background-color:hsla(0,0%,90%,.36)}.markdown-body code:after,.markdown-body code:before,.markdown-body tt:after,.markdown-body tt:before{letter-spacing:-.2em;content:"\A0"}.markdown-body code br,.markdown-body tt br{display:none}.markdown-body del code{text-decoration:inherit}.markdown-body pre{word-wrap:normal}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:transparent;border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px}.markdown-body pre code,.markdown-body pre tt{display:inline;max-width:auto;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body pre code:after,.markdown-body pre code:before,.markdown-body pre tt:after,.markdown-body pre tt:before{content:normal}.markdown-body .csv-data td,.markdown-body .csv-data th{padding:5px;overflow:hidden;font-size:12px;line-height:1;text-align:left;white-space:nowrap}.markdown-body .csv-data .blob-line-num{padding:10px 8px 9px;text-align:right;background:#fff;border:0}.markdown-body .csv-data tr{border-top:0}.markdown-body .csv-data th{font-weight:700;background:#f8f8f8;border-top:0}.markdown-body kbd{display:inline-block;padding:3px 5px;font-size:11px;line-height:10px;color:#555;vertical-align:middle;background-color:#fcfcfc;border:1px solid #ccc;border-bottom-color:#bbb;border-radius:3px;box-shadow:inset 0 -1px 0 #bbb}.news .alert .markdown-body blockquote{padding:0 0 0 40px;border:0 none}.activity-tab .news .alert .commits,.activity-tab .news .markdown-body blockquote{padding-left:0}.task-list-item{list-style-type:none}.task-list-item label{font-weight:400}.task-list-item.enabled label{cursor:pointer}.task-list-item+.task-list-item{margin-top:3px}.task-list-item-checkbox{float:left;margin:.31em 0 .2em -1.3em!important;vertical-align:middle;cursor:default!important}.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;padding-top:40px;padding-bottom:40px;max-width:758px;overflow:visible!important}.markdown-body pre{border:inherit!important}.night .markdown-body pre{filter:invert(100%)}.markdown-body code{color:inherit!important}.markdown-body pre code .wrapper{display:-moz-inline-flex;display:-ms-inline-flex;display:-o-inline-flex;display:inline-flex}.markdown-body pre code .gutter{float:left;overflow:hidden;-webkit-user-select:none;user-select:none}.markdown-body pre code .gutter.linenumber{text-align:right;position:relative;display:inline-block;cursor:default;z-index:4;padding:0 8px 0 0;min-width:20px;box-sizing:content-box;color:#afafaf!important;border-right:3px solid #6ce26c!important}.markdown-body pre code .gutter.linenumber>span:before{content:attr(data-linenumber)}.markdown-body pre code .code{float:left;margin:0 0 0 16px}.markdown-body .gist .line-numbers{border-left:none;border-top:none;border-bottom:none}.markdown-body .gist .line-data{border:none}.markdown-body .gist table{border-spacing:0;border-collapse:inherit!important}.night .markdown-body .gist table tr:nth-child(2n){background-color:#ddd}.markdown-body code[data-gist-id]{background:none;padding:0;filter:invert(100%)}.markdown-body code[data-gist-id]:after,.markdown-body code[data-gist-id]:before{content:""}.markdown-body code[data-gist-id] .blob-num{border:unset}.markdown-body code[data-gist-id] table{overflow:unset;margin-bottom:unset}.markdown-body code[data-gist-id] table tr{background:unset}.markdown-body[dir=rtl] pre{direction:ltr}.markdown-body[dir=rtl] code{direction:ltr;unicode-bidi:embed}.markdown-body .alert>p{margin-bottom:0}.markdown-body pre.abc,.markdown-body pre.flow-chart,.markdown-body pre.graphviz,.markdown-body pre.mermaid,.markdown-body pre.sequence-diagram{text-align:center;background-color:inherit;border-radius:0;white-space:inherit}.night .markdown-body pre.graphviz .graph>polygon{fill:#333}.night .markdown-body pre.mermaid .sectionTitle,.night .markdown-body pre.mermaid .titleText,.night .markdown-body pre.mermaid text{fill:#fff}.markdown-body pre.abc>code,.markdown-body pre.flow-chart>code,.markdown-body pre.graphviz>code,.markdown-body pre.mermaid>code,.markdown-body pre.sequence-diagram>code{text-align:left}.markdown-body pre.abc>svg,.markdown-body pre.flow-chart>svg,.markdown-body pre.graphviz>svg,.markdown-body pre.mermaid>svg,.markdown-body pre.sequence-diagram>svg{max-width:100%;height:100%}.night .markdown-body .abc path{fill:#eee}.night .markdown-body .abc path.note_selected{fill:##4DD0E1}.night tspan{fill:#fefefe}.night pre rect{fill:transparent}.night pre.flow-chart path,.night pre.flow-chart rect{stroke:#fff}.markdown-body pre>code.wrap{white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word}.markdown-body .alert>p,.markdown-body .alert>ul{margin-bottom:0}.markdown-body summary{display:list-item}.markdown-body summary:focus{outline:none}.markdown-body details summary{cursor:pointer}.markdown-body details:not([open])>:not(summary){display:none}.markdown-body figure{margin:1em 40px}.markdown-body img{background-color:transparent}.vimeo,.youtube{cursor:pointer;display:table;text-align:center;background-position:50%;background-repeat:no-repeat;background-size:contain;background-color:#000;overflow:hidden}.vimeo,.youtube{position:relative;width:100%}.youtube{padding-bottom:56.25%}.vimeo img{width:100%;object-fit:contain;z-index:0}.youtube img{object-fit:cover;z-index:0}.vimeo iframe,.youtube iframe,.youtube img{width:100%;height:100%;position:absolute;top:0;left:0}.vimeo iframe,.youtube iframe{vertical-align:middle;z-index:1}.vimeo .icon,.youtube .icon{position:absolute;height:auto;width:auto;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;opacity:.3;transition:opacity .2s;z-index:0}.vimeo:hover .icon,.youtube:hover .icon{opacity:.6;transition:opacity .2s}.slideshare .inner,.speakerdeck .inner{position:relative;width:100%}.slideshare .inner iframe,.speakerdeck .inner iframe{position:absolute;top:0;bottom:0;left:0;right:0;width:100%;height:100%}.MJX_Assistive_MathML{display:none}.ui-infobar{position:relative;z-index:2;max-width:758px;margin-top:25px;margin-bottom:-25px;color:#777}.toc .invisable-node{list-style-type:none}.ui-toc{position:fixed;bottom:20px;z-index:10000}.ui-toc-label{opacity:.3;background-color:#ccc;border:none;transition:opacity .2s}.ui-toc .open .ui-toc-label{opacity:1;color:#fff;transition:opacity .2s}.ui-toc-label:focus{opacity:.3;background-color:#ccc;color:#000}.ui-toc-label:hover{opacity:1;background-color:#ccc;transition:opacity .2s}.ui-toc-dropdown{margin-top:23px;margin-bottom:20px;padding-left:10px;padding-right:10px;max-width:45vw;width:25vw;max-height:70vh;overflow:auto;text-align:inherit}.ui-toc-dropdown>.toc{max-height:calc(70vh - 100px);overflow:auto}.ui-toc-dropdown[dir=rtl] .nav{padding-right:0;letter-spacing:.0029em}.ui-toc-dropdown a{overflow:hidden;text-overflow:ellipsis;white-space:pre}.ui-toc-dropdown .nav>li>a{display:block;padding:4px 20px;font-size:13px;font-weight:500;color:#767676}.ui-toc-dropdown .nav>li:first-child:last-child > ul,.ui-toc-dropdown .toc.expand ul{display:block}.ui-toc-dropdown .nav>li>a:focus,.ui-toc-dropdown .nav>li>a:hover{padding-left:19px;color:#000;text-decoration:none;background-color:transparent;border-left:1px solid #000}.night .ui-toc-dropdown .nav>li>a:focus,.night .ui-toc-dropdown .nav>li>a:hover{color:#fff;border-left-color:#fff}.ui-toc-dropdown[dir=rtl] .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav>li>a:hover{padding-right:19px;border-left:none;border-right:1px solid #000}.ui-toc-dropdown .nav>.active:focus>a,.ui-toc-dropdown .nav>.active:hover>a,.ui-toc-dropdown .nav>.active>a{padding-left:18px;font-weight:700;color:#000;background-color:transparent;border-left:2px solid #000}.night .ui-toc-dropdown .nav>.active:focus>a,.night .ui-toc-dropdown .nav>.active:hover>a,.night .ui-toc-dropdown .nav>.active>a{color:#fff;border-left:2px solid #fff}.ui-toc-dropdown[dir=rtl] .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav>.active>a{padding-right:18px;border-left:none;border-right:2px solid #000}.ui-toc-dropdown .nav .nav{display:none;padding-bottom:10px}.ui-toc-dropdown .nav>.active>ul{display:block}.ui-toc-dropdown .nav .nav>li>a{padding-top:1px;padding-bottom:1px;padding-left:30px;font-size:12px;font-weight:400}.night .ui-toc-dropdown .nav>li>a{color:#aaa}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a{padding-right:30px}.ui-toc-dropdown .nav .nav>li>ul>li>a{padding-top:1px;padding-bottom:1px;padding-left:40px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a{padding-right:40px}.ui-toc-dropdown .nav .nav>li>a:focus,.ui-toc-dropdown .nav .nav>li>a:hover{padding-left:29px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:hover{padding-right:29px}.ui-toc-dropdown .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown .nav .nav>li>ul>li>a:hover{padding-left:39px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:hover{padding-right:39px}.ui-toc-dropdown .nav .nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>a{padding-left:28px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>a{padding-right:28px}.ui-toc-dropdown .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active>a{padding-left:38px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active>a{padding-right:38px}.markdown-body[lang^=ja]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,Hiragino Kaku Gothic Pro,\\30D2\30E9\30AE\30CE\89D2\30B4 Pro W3,Osaka,Meiryo,\\30E1\30A4\30EA\30AA,MS Gothic,"\FF2D\FF33   \30B4\30B7\30C3\30AF",sans-serif}.ui-toc-dropdown[lang^=ja]{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,"\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF",sans-serif}.markdown-body[lang=zh-tw]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,PingFang TC,Microsoft JhengHei,\\5FAE\8EDF\6B63\9ED1,sans-serif}.ui-toc-dropdown[lang=zh-tw]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,\\5FAE\8EDF\6B63\9ED1UI,sans-serif}.markdown-body[lang=zh-cn]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,PingFang SC,Microsoft YaHei,\\5FAE\8F6F\96C5\9ED1,sans-serif}.ui-toc-dropdown[lang=zh-cn]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,\\5FAE\8F6F\96C5\9ED1UI,sans-serif}.ui-affix-toc{position:fixed;top:0;max-width:15vw;max-height:70vh;overflow:auto}.back-to-top,.expand-toggle,.go-to-bottom{display:block;padding:4px 10px;margin-top:10px;margin-left:10px;font-size:12px;font-weight:500;color:#999}.back-to-top:focus,.back-to-top:hover,.expand-toggle:focus,.expand-toggle:hover,.go-to-bottom:focus,.go-to-bottom:hover{color:#563d7c;text-decoration:none}.back-to-top,.go-to-bottom{margin-top:0}.ui-user-icon{width:20px;height:20px;display:block;border-radius:3px;margin-top:2px;margin-bottom:2px;margin-right:5px;background-position:50%;background-repeat:no-repeat;background-size:contain}.ui-user-icon.small{width:18px;height:18px;display:inline-block;vertical-align:middle;margin:0 0 .2em}small span{line-height:22px}small .dropdown{display:inline-block}small .dropdown a:focus,small .dropdown a:hover{text-decoration:none}.unselectable{-moz-user-select:none;-webkit-user-select:none;-o-user-select:none;user-select:none}.night .navbar{background:#333;border-bottom-color:#333;color:#eee}.night .navbar a{color:#eee}@media print{blockquote,div,img,pre,table{page-break-inside:avoid!important}a[href]:after{font-size:12px!important}}.markdown-body.slides{position:relative;z-index:1;color:#222}.markdown-body.slides:before{content:"";display:block;position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1;background-color:currentColor;box-shadow:0 0 0 50vw}.markdown-body.slides section[data-markdown]{position:relative;margin-bottom:1.5em;background-color:#fff;text-align:center}.markdown-body.slides section[data-markdown] code{text-align:left}.markdown-body.slides section[data-markdown]:before{content:"";display:block;padding-bottom:56.23%}.markdown-body.slides section[data-markdown]>div:first-child{position:absolute;top:50%;left:1em;right:1em;transform:translateY(-50%);max-height:100%;overflow:hidden}.markdown-body.slides section[data-markdown]>ul{display:inline-block}.markdown-body.slides>section>section+section:after{content:"";position:absolute;top:-1.5em;right:1em;height:1.5em;border:3px solid #777}body{font-smoothing:subpixel-antialiased!important;-webkit-font-smoothing:subpixel-antialiased!important;-moz-osx-font-smoothing:auto!important;text-shadow:0 0 1em transparent,1px 1px 1.2px rgba(0,0,0,.004);-webkit-overflow-scrolling:touch;font-family:Source Sans Pro,Helvetica,Arial,sans-serif;letter-spacing:.025em}.focus,:focus{outline:none!important}::-moz-focus-inner{border:0!important}body.modal-open{overflow-y:auto;padding-right:0!important}
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="doc" class="markdown-body container-fluid"><h1 id="CC3-181206-Rundumschlag-Ein-Websystem"><a class="anchor hidden-xs" href="#CC3-181206-Rundumschlag-Ein-Websystem" title="CC3-181206-Rundumschlag-Ein-Websystem"><span class="octicon octicon-link"></span></a>CC3 181206 Rundumschlag: Ein Websystem</h1><h2 id="Organisatorisches"><a class="anchor hidden-xs" href="#Organisatorisches" title="Organisatorisches"><span class="octicon octicon-link"></span></a>Organisatorisches</h2><p>Diese Aufgabe ist umfangreich, planen Sie das bitte ein. Sie müssen Ihr Ergebnis bis zum <strong>Donnerstag, 17.01.2019</strong> via Nextcloud einreichen.</p><h2 id="Voraussetzungen"><a class="anchor hidden-xs" href="#Voraussetzungen" title="Voraussetzungen"><span class="octicon octicon-link"></span></a>Voraussetzungen</h2><ul>
+<li>Node.js</li>
+<li>Die übliche Musikdatenbank (siehe vorherige Übungen)</li>
+<li>Ein Code-Editor</li>
+</ul><h2 id="Ziel"><a class="anchor hidden-xs" href="#Ziel" title="Ziel"><span class="octicon octicon-link"></span></a>Ziel</h2><p>Wir haben Ihnen die Grundlagen vieler Technologien angeboten, unter Anderem haben wir uns mit HTML, CSS, SQL, JavaScript im Browser und mit Node.js beschäfigt. In dieser letzten Aufgabe wird alles zusammen fließen.</p><p>Sie starten mit einem leeren Ordner, und stellen ihr eigenes kleines Projekt auf die Beine.</p><p>Wir werden als Grundlage wieder die Musikdatenbank nutzen, um eine Webapplikation zu implementieren. Sie können sie aus einer der vorigen Übungen kopieren.</p><h2 id="Teil-0-Leseverständnis-und-Vorgehen"><a class="anchor hidden-xs" href="#Teil-0-Leseverständnis-und-Vorgehen" title="Teil-0-Leseverständnis-und-Vorgehen"><span class="octicon octicon-link"></span></a>Teil 0. Leseverständnis und Vorgehen</h2><p>Es bietet sich an, einen Teil-Abschnitt komplett zu lesen bevor Sie mit der Durchführung beginnen. Sie werden an verschiedenen Stellen vorangeganene Übungen, weitere Dokumentation, Tutoren/Professoren, Freunde und/oder Google bemühen müssen. Das ist Absicht.</p><p>Wenn Sie nicht weiter wissen, hilft Ihnen möglicherweise ein <code>console.log()</code> - lassen Sie sich einfach mal die Objekte ausgeben, mit denen Sie gerade arbeiten.</p><h2 id="Teil-1-Statische-Dateien-ausliefern"><a class="anchor hidden-xs" href="#Teil-1-Statische-Dateien-ausliefern" title="Teil-1-Statische-Dateien-ausliefern"><span class="octicon octicon-link"></span></a>Teil 1. Statische Dateien ausliefern</h2><h3 id="Einführung-Wiederholung-HTTP-Server"><a class="anchor hidden-xs" href="#Einführung-Wiederholung-HTTP-Server" title="Einführung-Wiederholung-HTTP-Server"><span class="octicon octicon-link"></span></a>Einführung: Wiederholung HTTP Server</h3><p>Wir wollen, dass unser Server statische Dateien ausliefern kann. Das brauchen wir, um normales HTML, CSS und Javscript von Ihrer Festplatte an den Browser zu senden. Aus der Node Übung (18.11. / Module…) kennen wir ja schon den <a href="https://nodejs.org/en/about/" target="_blank">HTTP Server als Standardbeispiel</a> um etwas auf eine HTTP-Anfrage zu antworten. In dieser Übung hatten wir das um dynamische Teile ergänzt, so dass die Uhrzeit angezeigt wurde.</p><p><em>Das sah ungefähr so aus:</em></p><pre><code class="javascript hljs"><span class="hljs-keyword">var</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);
+
+<span class="hljs-keyword">var</span> hostname = <span class="hljs-string">'127.0.0.1'</span>;
+<span class="hljs-keyword">var</span> port = <span class="hljs-number">3000</span>;
+
+<span class="hljs-keyword">var</span> server = http.createServer(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>{
+  <span class="hljs-keyword">var</span> now = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();
+  res.statusCode = <span class="hljs-number">200</span>;
+  res.setHeader(<span class="hljs-string">'Content-Type'</span>, <span class="hljs-string">'text/plain'</span>);
+  res.end(<span class="hljs-string">'Hi, the time is '</span> + now.toString());
+});
+
+server.listen(port, hostname, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Server running at http://<span class="hljs-subst">${hostname}</span>:<span class="hljs-subst">${port}</span>/`</span>);
+});
+</code></pre><p>Die Variable<code>req</code> ist der “Request” (Anfrage, die der Client gestellt hatte), es handelt sich um ein <a href="https://nodejs.org/api/http.html#http_class_http_incomingmessage" target="_blank"><code>IncomingMessage</code>-Objekt</a>.<br>
+Die Variable <code>res</code> ist die “Response” (Antwort an den Client), es handelt sich um ein <a href="https://nodejs.org/api/http.html#http_class_http_serverresponse" target="_blank"><code>ServerResponse</code>-Objekt</a>.</p><p>Das <code>req</code>-Objekt hat eine <a href="https://nodejs.org/api/http.html#http_message_url" target="_blank">Eigenschaft <code>url</code></a>, welche wir nutzen können, um auf verschiedene Anfragen zu reagieren:</p><pre><code class="javascript hljs"><span class="hljs-keyword">if</span> (req.url == <span class="hljs-string">'/beispiel.html'</span>) {
+  <span class="hljs-comment">/* hier eigener code */</span>
+}
+</code></pre><p>Diesen Ansatz werden wir später nochmal brauchen, für Statische Dateien hat er aber einen Nachteil: Wir müssten dann für jede Datei die liefern wollen den JS-Code anpassen:</p><pre><code class="javascript hljs"><span class="hljs-comment">// ... if...</span>
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (req.pathname == <span class="hljs-string">'/beispiel.css'</span>) { <span class="hljs-comment">/* … */</span> }
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (req.pathname == <span class="hljs-string">'/beispiel.js'</span>) { <span class="hljs-comment">/* … */</span> }
+<span class="hljs-keyword">else</span> {
+  res.statusCode = <span class="hljs-number">404</span>;
+  res.end(<span class="hljs-string">'Seite exisitert nicht!'</span>);
+}
+</code></pre><p>Zum Glück gibt es über NPM das passende Paket, welches diese Aufgabe für uns übernimmt.</p><h3 id="Aufgabenstellung"><a class="anchor hidden-xs" href="#Aufgabenstellung" title="Aufgabenstellung"><span class="octicon octicon-link"></span></a>Aufgabenstellung</h3><p>Legen Sie in einem Ordner ein neues NodeJS Projekt mit dem Kommandozeilenbefehl <code>npm init</code> an. Sie können in der Regel einfach die Standardwerte übernehmen (mit <kbd>Enter</kbd> bestätigen), allerdings gibt es für manche Fragen Einschränkungen (Leerzeichen sind im Projektnamen nicht erlaubt, etc.).</p><p>Wir haben Ihnen die Pakete <code>serve-static</code> und <code>finalhandler</code> heraus gesucht. Installieren Sie diese Pakete, was gleichzeitig einen Eintrag in der <code>package.json</code> erstellen wird:</p><pre><code class="shell hljs">npm install serve-static finalhandler
+</code></pre><p>Nun legen wir ein Skript (<code>index.js</code>) mit dem Beispiel (“Examples”) von <a href="https://www.npmjs.com/package/serve-static" target="_blank">https://www.npmjs.com/package/serve-static</a> an.<br>
+In Zeile <code>6</code> wird definiert, wo der Server nach Dateien suchen soll. Im Beispiel ist das <code>'public/ftp'</code> - was wir allerdings gerne anders hätten.</p><pre><code class="javascript hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span></div><div class="code"><span class="hljs-keyword">var</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);
+<span class="hljs-keyword">var</span> finalhandler = <span class="hljs-built_in">require</span>(<span class="hljs-string">'finalhandler'</span>);
+<span class="hljs-keyword">var</span> serveStatic = <span class="hljs-built_in">require</span>(<span class="hljs-string">'serve-static'</span>);
+ 
+<span class="hljs-comment">// Serve up public/ftp folder </span>
+<span class="hljs-keyword">var</span> serve = serveStatic(<span class="hljs-string">'public/ftp'</span>, {<span class="hljs-string">'index'</span>: [<span class="hljs-string">'index.html'</span>, <span class="hljs-string">'index.htm'</span>]});
+
+<span class="hljs-comment">// Create server </span>
+<span class="hljs-keyword">var</span> server = http.createServer(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onRequest</span> (<span class="hljs-params">req, res</span>) </span>{
+  serve(req, res, finalhandler(req, res));
+});
+
+<span class="hljs-comment">// Listen starts the actual server on the specified port</span>
+server.listen(<span class="hljs-number">3000</span>);
+</div></div></code></pre><p>Ändern Sie diesen Wert in <code>public</code> oder einen Wert Ihrer Wahl und legen Sie dann einen Unterordner mit eben diesem Namen an. Für den Anfang legen Sie in diesem Ordner mal eine Beipiel HTML-Seite <code>index.html</code> an. Ihr Ordner sollte dann folgendermaßen aussehen:</p><pre><code>.
+├── index.js
+├── node_modules
+│&nbsp;&nbsp; └── (hier sind eine Menge Pakete drin)
+├── package.json
+└── public
+    └── index.html
+</code></pre><p>Jetzt nur noch den Server in der Kommandozeile starten:<br>
+<code>node index.js</code><br>
+Schon sollten Sie im Browser unter <a href="http://localhost:3000/" target="_blank">http://localhost:3000/</a> Ihre HTML Datei oder auch weitere Dateien die sie in <code>public</code> legen ausgegeben bekommen.</p><p>Herzlichen Glückwunsch, Sie haben einen simplen Webserver für geschrieben.</p><h2 id="Teil-2-Auf-verschiedene-URLs-unterschiedlich-reagieren"><a class="anchor hidden-xs" href="#Teil-2-Auf-verschiedene-URLs-unterschiedlich-reagieren" title="Teil-2-Auf-verschiedene-URLs-unterschiedlich-reagieren"><span class="octicon octicon-link"></span></a>Teil 2. Auf verschiedene URLs unterschiedlich reagieren</h2><h3 id="Einführung-Erinnerung-Query-Parameter"><a class="anchor hidden-xs" href="#Einführung-Erinnerung-Query-Parameter" title="Einführung-Erinnerung-Query-Parameter"><span class="octicon octicon-link"></span></a>Einführung: Erinnerung Query-Parameter</h3><p>Erweitern Sie nun ihren HTTP Server, so dass er unter <code>/artist</code> auf Query/Anfrage Parameter reagiert.</p><p>Dazu müssen wir nun neben den statischen Dateien auch dynamisch erstellte Inhalte ausgeben können. Wir möchten das unter dem Pfadnamen <code>/artist</code>, also der URL <a href="http://localhost:3000/artist" target="_blank">http://localhost:3000/artist</a>, etwas zurückgegeben wird.</p><p>URLs setzen sich aus mehreren Teilen zusammen:</p><pre><code>http://example.org/test.html?name=Einstein&amp;alter=137
+                             ‾‾‾‾‾‾‾‾‾‾‾‾‾ ‾‾‾‾‾‾‾‾‾
+</code></pre><p>setzt sich zusammen aus:</p><pre><code>Protokoll: http
+Server: example.org
+Pfad: /test.html
+Query-Parameter:
+  name: "Einstein"   &lt;======
+  alter: "137"       &lt;======
+</code></pre><p>Node.js enthält von Haus aus das Modul <code>url</code>, das eine URL inklusive query string für Sie <em>parsen</em> - also in logische Einzelteile zerlegen - kann. Das <code>url</code>-Modul müssen Sie zwar nicht installieren, aber auf dem üblichen Weg requiren. Mit <code>url.parse(req.url, true)</code> erhalten Sie ein Objekt mit nützlichen Eigenschaften z.B. <code>pathname</code>.</p><p>Weitere Anwendungsbeispiele finden Sie in der <a href="https://nodejs.org/api/url.html#url_url" target="_blank">Dokumentation zum URL-Modul</a>.</p><h3 id="Aufgabenstellung-1-Mit-dem-Pfadnamen-arbeiten"><a class="anchor hidden-xs" href="#Aufgabenstellung-1-Mit-dem-Pfadnamen-arbeiten" title="Aufgabenstellung-1-Mit-dem-Pfadnamen-arbeiten"><span class="octicon octicon-link"></span></a>Aufgabenstellung 1: Mit dem Pfadnamen arbeiten</h3><p>Fügen Sie das folgende Stückchen Code <strong>in ihren bestehenden</strong> Server-Code ein. Innerhalb von <code>onRequest</code> soll nun eine Unterscheidung anhand der Adresse vorgenommen werden. In einem Fall passiert etwas Neues, im anderen Fall liefern wir weiterhin statische Dateien aus. Denken Sie außerdem daran, das <code>url</code>-Modul zu requiren.</p><pre><code class="javascript hljs"><span class="hljs-comment">// ... requires und so organisatorisches Zeug</span>
+
+<span class="hljs-keyword">var</span> server = http.createServer(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onRequest</span> (<span class="hljs-params">req, res</span>) </span>{
+  <span class="hljs-keyword">var</span> reqURL = url.parse(req.url, <span class="hljs-literal">true</span>);
+  <span class="hljs-keyword">if</span> (reqURL.pathname === <span class="hljs-string">'/artist'</span>) {
+    res.statusCode = <span class="hljs-number">200</span>;
+    res.end(<span class="hljs-string">"Hi! I am not a file from your filesystem. This is good."</span>);
+  } <span class="hljs-keyword">else</span> {
+    serve(req, res, finalhandler(req, res)); <span class="hljs-comment">// &lt;---- unveränderter Aufruf von vorher</span>
+  }
+})
+
+<span class="hljs-comment">// hier folgt weiterer Code</span>
+</code></pre><p>Starten Sie Ihren Server neu und probieren Sie die beiden Adressen testhalber mal aus:</p><ul>
+<li><a href="http://127.0.0.1:3000/" target="_blank">http://127.0.0.1:3000/</a> - sollte wie gewohnt funktionieren</li>
+<li><a href="http://127.0.0.1:3000/artist" target="_blank">http://127.0.0.1:3000/artist</a> - sollte “Hi! I am not a file …” ausgeben</li>
+</ul><h3 id="Aufgabenstellung-2-Query-Parameter-auswerten"><a class="anchor hidden-xs" href="#Aufgabenstellung-2-Query-Parameter-auswerten" title="Aufgabenstellung-2-Query-Parameter-auswerten"><span class="octicon octicon-link"></span></a>Aufgabenstellung 2: Query-Parameter auswerten</h3><p>Der Server soll eine GET Anfrage unter <code>/artist</code> empfangen, die einen Künstlername aus einer Liste ausgibt. Die Anfrage den Parameter <code>id</code> und als Wert eine Zahl.</p><p>Zum Beispiel soll <code>http://127.0.0.1:3000/artist?id=1</code> bei folgenden Daten …</p><pre><code class="javascript hljs"><span class="hljs-keyword">var</span> artists = [<span class="hljs-string">"Kayne West"</span>, <span class="hljs-string">"Phife Dawg"</span>, <span class="hljs-string">"Grandmaster Flash"</span>, <span class="hljs-string">"Afrika Bambaataa"</span>, <span class="hljs-string">"DJ Kool Herc"</span>];
+
+<span class="hljs-comment">// Server-Code</span>
+
+res.end(artists[id]);
+
+<span class="hljs-comment">// Mehr Server-Code</span>
+</code></pre><p>… den Text <em>Phife Dawg</em> im Browser ausgeben.</p><p>Der obige Code ist unvollständig, verwenden Sie die <a href="https://nodejs.org/api/url.html" target="_blank">Dokumentation des <code>url</code> Moduls</a> um die Adresse korrekt zu zerlegen, und damit aus dem <code>artists</code>-Array den entsprechenden Künsteler aus zu wählen.</p><p>Probieren Sie, ob Sie für die folgenden Adressen jeweils verschiedene (und erwartete) Ausgaben erhalten:</p><ul>
+<li><a href="http://127.0.0.1:3000/artist?id=1" target="_blank">http://127.0.0.1:3000/artist?id=1</a></li>
+<li><a href="http://127.0.0.1:3000/artist?id=2" target="_blank">http://127.0.0.1:3000/artist?id=2</a></li>
+<li><a href="http://127.0.0.1:3000/artist?id=4" target="_blank">http://127.0.0.1:3000/artist?id=4</a></li>
+</ul><p>Sie können die Adressen selbstverständlich auch von Hand in der Adresszeile ändern.</p><p>Bevor Sie klicken: was wird bei der folgenden Adresse passieren? Warum?</p><ul>
+<li><a href="http://127.0.0.1:3000/artist?id=200" target="_blank">http://127.0.0.1:3000/artist?id=200</a></li>
+</ul><p>Herzlichen Glückwunsch, Sie können nun nicht nur Webseiten ausliefern, die auf Ihrer Festplatte fertig liegen, sondern auch in Abhängigkeit von der aufgerufenen Adresse dynamische Sachen generieren.</p><h2 id="Teil-3-SQL-Queries"><a class="anchor hidden-xs" href="#Teil-3-SQL-Queries" title="Teil-3-SQL-Queries"><span class="octicon octicon-link"></span></a>Teil 3. SQL-Queries</h2><p>Sie können nun unter verschiedenen Adressen verschiedene Inhalte abrufen. Verwenden Sie die Query-Parameter, um ihrem Script Daten zu übergeben. Das könnte zum Beispiel eine Artist-ID sein, diese können Sie wiederrum in einer SQL-Abfrage verwenden.</p><h3 id="Wiederholung-SQLite"><a class="anchor hidden-xs" href="#Wiederholung-SQLite" title="Wiederholung-SQLite"><span class="octicon octicon-link"></span></a>Wiederholung: SQLite</h3><pre><code class="javascript hljs"><span class="hljs-comment">// module sind geladen, Datenbankverbindung steht auch schon</span>
+db.all(<span class="hljs-string">'SELECT * FROM songs WHERE artist = ?'</span>, <span class="hljs-string">'Blur'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, rows</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(rows);
+});
+</code></pre><p>Ausgabe:</p><pre><code class="shell hljs"><span class="hljs-meta">&gt;</span><span class="bash"> node some-script.js</span>
+[ {
+    ID: 26896,
+    artist: 'Blur',
+    album_id: 1452,
+    track_number: '13',
+    title: 'Country house',
+    year: 2000
+  },{
+    ID: 26897,
+    artist: 'Blur',
+    album_id: 1452,
+    track_number: '16',
+    title: 'This is a low',
+    year: 2000
+  },{
+    ID: 26898,
+    artist: 'Blur'
+    ...
+  } ]
+</code></pre><p>Zur Erinnerung: Nachdem die Datenbank-verbindung besteht (nicht im Beispiel enthalten), kann man mit <code>.all()</code>, <code>.each()</code>, <code>.get()</code> und anderen Methoden Anfragen an die Datenbank stellen. Details zu den Abfragen finden Sie in den vorangegangen Übungen vor Allem aber in der <a href="https://github.com/mapbox/node-sqlite3/wiki/API#databaseallsql-param--callback" target="_blank">SQLite3-Dokumentation</a>.</p><h3 id="Aufgabenstellung-Einfache-SQL-Query"><a class="anchor hidden-xs" href="#Aufgabenstellung-Einfache-SQL-Query" title="Aufgabenstellung-Einfache-SQL-Query"><span class="octicon octicon-link"></span></a>Aufgabenstellung: Einfache SQL-Query</h3><p>Damit Sie auf die Datenbank zugreifen können, müssen Sie das sqlite3-Modul per Terminal installieren:</p><pre><code class="shell hljs">npm install sqlite3
+</code></pre><p>Übernehmen Sie die Zeilen aus der vorangegangenen Übung <code>CC3_181206_Datenbanken_Übung_Teil_3_Coenen</code> bzw. aus <code>artist2.js</code>. Dort wurde eine sehr ähnliche Datenbank-Abfrage bereits gemacht.</p><p>Sie können die Daten mit <code>res</code> (response) zurück geben:</p><pre><code class="javascript hljs"><span class="hljs-comment">// dem Browser sagen, dass wir HTML senden</span>
+res.setHeader(<span class="hljs-string">'Content-Type'</span>, <span class="hljs-string">'text/html; charset=utf-8'</span>);
+
+<span class="hljs-comment">// artist in HTML einbinden</span>
+res.write(<span class="hljs-string">"&lt;p&gt;"</span> + rows[<span class="hljs-number">0</span>].artist + <span class="hljs-string">"&lt;/p&gt;"</span>);
+
+<span class="hljs-comment">// Antwort absenden</span>
+res.end();
+</code></pre><p>Beachten Sie beim Testen, dass die Datenbank Lücken hat, die kleinste Artist-ID ist 1538. Versuchen Sie mal die nachfolgenden Links:</p><ul>
+<li><a href="http://localhost:3000/artist?id=2221" target="_blank">http://localhost:3000/artist?id=2221</a></li>
+<li><a href="http://localhost:3000/artist?id=4142" target="_blank">http://localhost:3000/artist?id=4142</a></li>
+<li>Verwenden Sie den SQLite-Browser aus der Datenbank-Übung um weitere funktionierende IDs heraus zu finden.</li>
+<li>Überlegen Sie, wass YouTube intern macht, wenn Sie diesen Link hier aufrufen: <a href="https://www.youtube.com/watch?v=JozAmXo2bDE" target="_blank">https://www.youtube.com/watch?v=JozAmXo2bDE</a></li>
+</ul><h3 id="Optional-mehr-Daten-mit-einem-Join"><a class="anchor hidden-xs" href="#Optional-mehr-Daten-mit-einem-Join" title="Optional-mehr-Daten-mit-einem-Join"><span class="octicon octicon-link"></span></a>Optional: mehr Daten mit einem Join</h3><p>Tabelle <code>songs</code> oder <code>albums</code> mit einem Join in die Abfrage einbeziehen und ausgeben. So können Sie zum Artist beispielsweise eine Liste aller Songs gleich mit ausgeben.</p><p>Die Verknüpfung ist in der vorliegenden Datenbank in den Tabellen <code>artists_albums</code> oder <code>artists_songs</code> abzulesen.</p><p>Ziehen Sie im Zweifelsfall <code>CC3_181122_Datenbanken_Datenmodell_und_ERM_Coenen.pdf</code> / Folie 22 und die zugehörige Übungsaufgabe zu Rate. Probieren Sie Ihre Query auf jeden Fall zuerst im SQLite-Browser aus.</p><h2 id="Teil-4-Liste-aller-Artists"><a class="anchor hidden-xs" href="#Teil-4-Liste-aller-Artists" title="Teil-4-Liste-aller-Artists"><span class="octicon octicon-link"></span></a>Teil 4. Liste aller Artists</h2><p>Nun haben wir zwar schon eine richtige Webappliaktion, aber die Anfragen müssen im Moment noch in der Adressleiste eingegeben oder per Link aufgerufen werden. Damit man auch ohne Ids zu kennen, die Künstler anzeigen kann, wollen wir eine Seite ausgeben, die alle Künstler auflistet und direkt mit den einzelnen Künstlernseiten verlinkt.</p><p>Also etwas in dieser Art:</p><pre><code class="html hljs">&lt;li&gt;<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/artist?id=1855"</span>&gt;</span>Manowar<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></span>
+&lt;li&gt;<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/artist?id=1856"</span>&gt;</span>Bee Gees<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></span>
+&lt;li&gt;<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/artist?id=1857"</span>&gt;</span>Bela B.<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></span>
+</code></pre><h3 id="Aufgabe-neue-Route"><a class="anchor hidden-xs" href="#Aufgabe-neue-Route" title="Aufgabe-neue-Route"><span class="octicon octicon-link"></span></a>Aufgabe: neue Route</h3><p>Zunächst brauchen wir eine neue Route, also eine neue Adresse unter der wir diese Inhalt anbieten. Hierfür bietet sich <a href="http://localhost:3000/artists" target="_blank">http://localhost:3000/artist<strong>s</strong></a> an. Die Plural-Form wird für solche Listen gerne verwendet, da es ja um mehrere (bzw. alle) Künstler geht.</p><p>Unser Server muss nun auf diesen neuen Pfadnamen reagieren. Fügen Sie eine weitere Unterscheidung ein:</p><pre><code class="javascript hljs"><span class="hljs-comment">// bestehender Server-Code ausgelassen</span>
+
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (reqURL.pathname === <span class="hljs-string">'/artists'</span>) {
+  <span class="hljs-comment">// oh, hi! Hier fehlt dann ja die Datenbank-Abfrage</span>
+}
+
+<span class="hljs-comment">// weiterer Server-Code</span>
+</code></pre><p>Fügen Sie in diesem neuen Abschnitt ebenfalls eine Datenbank-Abfrage ein. Diese soll schlicht alle Artists zurück geben. Für einen ersten Versuch ist es sinnvoll, das Ergebnis per <code>console.log()</code> in das Terminal ausgeben zu lassen.</p><p>Wenn die SQL-Abfrage wie gewünscht funktioniert, verwenden Sie eine Schleife, um alle Zeilen der Abfrage in die Response zu schreiben. Wir können in diesem Fall <code>res.end()</code> nicht benutzen, denn das beendet wortwörtlich die Antwort. Das <code>ServerResponse</code>-Objekt hat aber noch <a href="https://nodejs.org/api/http.html#http_response_write_chunk_encoding_callback" target="_blank"><code>write()</code></a> als methode. Damit ist auch mehrfaches Schreiben möglich:</p><pre><code class="javascript hljs"><span class="hljs-comment">// write so oft Sie wollen!</span>
+res.write(<span class="hljs-string">'Oh '</span>);
+res.write(<span class="hljs-string">'hi '</span>);
+res.write(<span class="hljs-string">'there!'</span>);
+
+<span class="hljs-comment">// end einmal am Ende</span>
+res.end();
+</code></pre><p>Sie sollten nun unter <a href="http://localhost:3000/artists" target="_blank">http://localhost:3000/artists</a> eine Liste der Artists sehen können.</p><h3 id="Optional-dbeach-statt-For-Schleife"><a class="anchor hidden-xs" href="#Optional-dbeach-statt-For-Schleife" title="Optional-dbeach-statt-For-Schleife"><span class="octicon octicon-link"></span></a>Optional: db.each() statt For-Schleife</h3><p>Da Sie eine lange Liste an Künstlern zurück bekommen, ist <code>db.each()</code> eleganter als <code>db.all</code>.</p><p><a href="https://github.com/mapbox/node-sqlite3/wiki/API#databaseeachsql-param--callback-complete" target="_blank"><code>db.each()</code></a> nimmt einen weiteren Callback entgegen, Sie können dies am Beispiel <code>songs.js</code> aus <code>CC3_161207_Aufgabe05-Datenbanken</code> noch einmal nachvollziehen.</p><p>Der erste Callback wird mehrfach aufgerufen - jeweils mit einer Datenbank-Zeile. Er eignet sich super für <code>res.write()</code>.</p><p>Der zweite Callback wird einmal am Ende der Datenbank-Abfrage aufgerufen, ein guter Zeitpunkt für <code>res.end()</code>.</p><h2 id="Teil-5-Kür-Erweiterungen-optional"><a class="anchor hidden-xs" href="#Teil-5-Kür-Erweiterungen-optional" title="Teil-5-Kür-Erweiterungen-optional"><span class="octicon octicon-link"></span></a>Teil 5. Kür: Erweiterungen! (optional)</h2><p>Es gibt viele Möglichkeiten, diese Anwendung zu erweitern, Sie können natürlich auch ganz andere Ideen verwirklichen:</p><ul>
+<li>Sortierbarkeit</li>
+<li>Lange Listen (z.B. Artists) seitenweise ausgeben (SQL-Stichwort: <code>LIMIT</code>).</li>
+<li>Suche</li>
+<li>Styling</li>
+<li>Eingabe-Formulare</li>
+<li>“Reporting” - also statistische Auswertung und Visualisierung</li>
+<li>Aufteilung des Code in mehrere sinnvolle Module</li>
+<li><a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/template_strings" target="_blank">Template-Strings</a> oder Template-Systeme wie <a href="https://pugjs.org/api/getting-started.html" target="_blank">pug</a>, <a href="http://mustache.github.io/" target="_blank">mustache</a> … um den HTML-Kram im Code etwas zu strukturieren.</li>
+</ul><h2 id="Teil-6-User-interface-mit-AJAX-und-JSON-optional"><a class="anchor hidden-xs" href="#Teil-6-User-interface-mit-AJAX-und-JSON-optional" title="Teil-6-User-interface-mit-AJAX-und-JSON-optional"><span class="octicon octicon-link"></span></a>Teil 6. User interface mit AJAX und JSON (optional)</h2><p><em>Der gesamte AJAX-Teil ist etwas umfangreich ausgefallen. Er stellt keine Pflicht-Abgabe dar, aber wir hoffen natürlich trotzdem, dass Sie sich daran versuchen.</em></p><p>Landläufig sind Webseiten, die AJAX nutzen auch als “Single-Page-App” bekannt. Anstatt die Seite bei jeder Aktion neu zu laden, wird die Applikation innerhalb einer Seite ausgeführt und durch JavaScript werden die Inhalte entsprechend ausgetauscht.</p><p>Diese Teil-Aufgabe erfordert Änderungen sowohl an Ihrem Server-Code (<code>index.js</code>) als auch an Code, der in Ihrem Browser ausgeführt wird. Für letzteres erstellen wir in 6.2 eine neue Datei.</p><h3 id="61-JSON-senden-Server-Teil"><a class="anchor hidden-xs" href="#61-JSON-senden-Server-Teil" title="61-JSON-senden-Server-Teil"><span class="octicon octicon-link"></span></a>6.1 JSON senden (Server-Teil)</h3><p>Als ertes versuchen wir die Songs eines <code>artist</code> als JSON zu übertragen. Hier eine kurze Erinnerung, wie JSON funktioniert:</p><p>Aus…</p><pre><code class="javascript hljs"><span class="hljs-keyword">var</span> data = {
+  <span class="hljs-attr">name</span>: <span class="hljs-string">"Duck"</span>,
+  <span class="hljs-attr">vorname</span>: <span class="hljs-string">"Donald"</span>,
+  <span class="hljs-attr">birthyear</span>: <span class="hljs-number">1931</span>
+};
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(data));
+<span class="hljs-comment">//          ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾</span>
+</code></pre><p>wird…</p><pre><code>{"name":"Duck","vorname":"Donald","birthyear":1931}
+</code></pre><p>Die Ausgabe sieht auf den Ersten Blick sehr ähnlich aus. Aber das wichtige Detail: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify" target="_blank"><code>JSON.stringify()</code></a> gibt einen String zurück, also eine Zeichenkette; daher auch <code>stringify</code>. Diese Darstellungsweise von Daten kann man praktisch in jeder Programmiersprache verwerten.</p><p>Um statt JSON korrekt zu versenden müssen wir den richtigen Header setzen und die rohen Daten in einen JSON-String konvertieren:</p><pre><code class="javascript hljs"><span class="hljs-comment">// Als Antwort auf eine Anfrage in Ihrem Code</span>
+res.setHeader(<span class="hljs-string">'Content-Type'</span>, <span class="hljs-string">'application/json'</span>);
+res.end(<span class="hljs-built_in">JSON</span>.stringify(data));
+</code></pre><p><code>data</code> steht hier stellvertretend für die Daten, die Sie versenden möchten. In Ihrem Code ist das möglicherweise eine Datenbankzeile oder ein für diesen Zweck vorbereitetes Objekt. Diese Zeilen stehen wahrscheinlich wieder in einem Datenbank-Callback.</p><p>Wie genau Sie das in Ihre Anwendung integrieren, ist Ihen überlassen. Eine Möglichkeit wäre eine weitere Route <code>/songs.json?artist=2221</code> anzulegen oder Sie übergeben einen Query Parameter <code>/artist?id=2221&amp;json=true</code> oder Sie zerlegen die URL manuell noch weiter: <code>/artist/2221/songs.json</code>. Es gibt, wie oft beim Programmieren, viele richtige Lösungen, dies sind nur drei Möglichkeiten.</p><ol>
+<li>Führen Sie eine neue Route für die Songs ein</li>
+<li>Machen Sie innerhalb dieser Route eine entsprechende Datenbank-Abfrage</li>
+<li>Geben Sie die Antwort als JSON aus.</li>
+</ol><h3 id="62-JSON-verwenden-Browser-Teil-1"><a class="anchor hidden-xs" href="#62-JSON-verwenden-Browser-Teil-1" title="62-JSON-verwenden-Browser-Teil-1"><span class="octicon octicon-link"></span></a>6.2 JSON verwenden (Browser-Teil 1)</h3><p>Um AJAX zu nutzen, brauchen wir nun ein Skript, welches im Browser und nicht auf dem Server ausgeführt wird. Das bedeutet, wir müssen wieder mit den statischen Dateien die wir im Verzeichnis <code>public/</code> abgelegt haben, arbeiten.</p><p>In der dritten Übung dieses Semesters <em>Javascript im Browser</em> haben Sie bereits kennen gelernt, wie man eine HTML-Seite mit Javascript manipulieren bzw. steuern kann. Mit diesem Wissen legen wir nun Code an, der eine Anfrage an unseren Server sendet und dessen JSON-Antwort im DOM einbindet, um es anzuzeigen.</p><ol>
+<li>Eine neue JS Datei im Ordner <code>public</code> anlegen und in <code>public/index.html</code> einbinden</li>
+<li>Bereiten Sie in <code>public/index.html</code> ein leeres Element (z.B. ein <code>&lt;div&gt;</code>-Tag) vor, in dem der dynamische Inhalt später landen soll.</li>
+<li>Senden Sie aus ihrer JavaScript-Datei heraus einen <code>fetch</code>-Request (neu, modern) oder <code>XMLHttpRequest</code> (alt, immer noch gültig) an Ihre neue JSON-Route (verwenden Sie testhalber einen beliebigen Artist). Hierfür können Sie einen kurzen Blick in <code>uebung dynamisches HTML.zip</code>, genauer gesagt die dortige <code>main.js</code> werfen. Für einen ersten Schnellschuss brauchen Sie nur den dortigen fetch-Aufruf so zu ändern, dass ihre JSON-Route aufgerufen wird.</li>
+<li>Nun können Sie mit dem Objekt beliebig weiter arbeiten, zum Beispiel können Sie die Ausgabe netter formatieren.</li>
+</ol><h3 id="63-Dynamische-Webapplikation-Browser-Teil-2"><a class="anchor hidden-xs" href="#63-Dynamische-Webapplikation-Browser-Teil-2" title="63-Dynamische-Webapplikation-Browser-Teil-2"><span class="octicon octicon-link"></span></a>6.3 Dynamische Webapplikation (Browser-Teil 2)</h3><p>Die eigentlich Stärke von Ajax ist das Nachladen von relevanten Informationen. Wir erweitern unser Beispiel-HTML daher von Hand um einen Ausschnitt der Künstler-Liste. Wir brauchen diesen Abschnitt übergangsweise zum Testen.</p><pre><code class="html hljs"><span class="hljs-comment">&lt;!-- irgendwo in &lt;body&gt; --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">data-id</span>=<span class="hljs-string">"1855"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/artist?id=1855"</span>&gt;</span>Manowar<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">data-id</span>=<span class="hljs-string">"1856"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/artist?id=1856"</span>&gt;</span>Bee Gees<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">data-id</span>=<span class="hljs-string">"1857"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/artist?id=1857"</span>&gt;</span>Bela B.<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+</code></pre><p>Der Code unterscheidet sich nur in einem Detail vom Code, den wir zuvor dynamisch generiert haben: Wir geben die ID <em>zusätzlich</em> in ein Attribut, dass wir <code>data-id</code> nennen. <code>data-id</code> ist nichts besonderes, wir könnten es auch <code>data-bernd</code> nennen. In HTML5 dürfen Sie eigene Attribute erfinden, wenn Sie sie mit <code>data-</code> beginnen. Wir benutzen das, um uns die ID nicht aus der URL fischen zu müssen.</p><p>Verwenden Sie Ihr Wissen aus <code>Übung 3</code>, um den List-Items einen Click-Handler zu geben:</p><pre><code class="javascript hljs"><span class="hljs-comment">// das können Sie locker auch noch in Ihre JavaScript-Datei aus 6.2 schreiben.</span>
+<span class="hljs-keyword">var</span> items = <span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">'li'</span>);
+items.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">item</span>) </span>{
+  item.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'ich wurde geklickt: '</span> + event.currentTarget.getAttribute(<span class="hljs-string">'data-id'</span>));
+    event.preventDefault();
+  });
+});
+</code></pre><p>Im Beispiel geben wir den Inhalt von unserem <code>data-id</code> Attribut in der Konsole aus.</p><p>Nachdem Sie sich überzeugt haben, dass Sie die geklickte ID erfolgreich ermitteln können, bauen Sie das Beispiel um, so dass beim Klick der AJAX-Request aus Schritt 6.2 ausgeführt wird - aber mit der eben ermittelten ID.</p><h3 id="64-Turtles-all-the-way-down-Browser-Teil-3"><a class="anchor hidden-xs" href="#64-Turtles-all-the-way-down-Browser-Teil-3" title="64-Turtles-all-the-way-down-Browser-Teil-3"><span class="octicon octicon-link"></span></a>6.4 Turtles all the way down! (Browser-Teil 3)</h3><p>In Beispiel 6.3 hatten wir nun eine Liste von Hand eingetragen, damit wir schnell etwas testen können. Viel schlauer wäre es jedoch, diese Liste dynamisch zu generieren. Hier gibt es eine Vielzahl von Möglichkeiten. Auch hier ist alles erlaubt, was funktioniert.</p><p>Hier sind zwei Beispiele:</p><ul>
+<li>Man könnte die Artist-Liste ebenfalls per JSON abrufen.<br>
+Aufwand: weitere Route, weiterer AJAX-Aufruf</li>
+<li>Man könnte die vorhandene Artist-Liste aus Schritt 4 um den Code aus Schritt 6.2-6.3 erweitern.<br>
+Aufwand: Script-Tag in vorhandener Seite laden, Vorhandenen Output um <code>data-id</code> ergänzen</li>
+</ul><p>Nach diesem Schritt sollten Sie eine Liste der Artist haben, die Ihnen ohne einen Seitenwechsel Zusatzinformationen nachladen kann.</p></div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+                <div class="toc"><ul class="nav">
+<li class=""><a href="#CC3-181206-Rundumschlag-Ein-Websystem" title="CC3 181206 Rundumschlag: Ein Websystem">CC3 181206 Rundumschlag: Ein Websystem</a><ul class="nav">
+<li><a href="#Organisatorisches" title="Organisatorisches">Organisatorisches</a></li>
+<li><a href="#Voraussetzungen" title="Voraussetzungen">Voraussetzungen</a></li>
+<li><a href="#Ziel" title="Ziel">Ziel</a></li>
+<li><a href="#Teil-0-Leseverständnis-und-Vorgehen" title="Teil 0. Leseverständnis und Vorgehen">Teil 0. Leseverständnis und Vorgehen</a></li>
+<li><a href="#Teil-1-Statische-Dateien-ausliefern" title="Teil 1. Statische Dateien ausliefern">Teil 1. Statische Dateien ausliefern</a><ul class="nav">
+<li><a href="#Einführung-Wiederholung-HTTP-Server" title="Einführung: Wiederholung HTTP Server">Einführung: Wiederholung HTTP Server</a></li>
+<li><a href="#Aufgabenstellung" title="Aufgabenstellung">Aufgabenstellung</a></li>
+</ul>
+</li>
+<li><a href="#Teil-2-Auf-verschiedene-URLs-unterschiedlich-reagieren" title="Teil 2. Auf verschiedene URLs unterschiedlich reagieren">Teil 2. Auf verschiedene URLs unterschiedlich reagieren</a><ul class="nav">
+<li><a href="#Einführung-Erinnerung-Query-Parameter" title="Einführung: Erinnerung Query-Parameter">Einführung: Erinnerung Query-Parameter</a></li>
+<li><a href="#Aufgabenstellung-1-Mit-dem-Pfadnamen-arbeiten" title="Aufgabenstellung 1: Mit dem Pfadnamen arbeiten">Aufgabenstellung 1: Mit dem Pfadnamen arbeiten</a></li>
+<li><a href="#Aufgabenstellung-2-Query-Parameter-auswerten" title="Aufgabenstellung 2: Query-Parameter auswerten">Aufgabenstellung 2: Query-Parameter auswerten</a></li>
+</ul>
+</li>
+<li><a href="#Teil-3-SQL-Queries" title="Teil 3. SQL-Queries">Teil 3. SQL-Queries</a><ul class="nav">
+<li><a href="#Wiederholung-SQLite" title="Wiederholung: SQLite">Wiederholung: SQLite</a></li>
+<li><a href="#Aufgabenstellung-Einfache-SQL-Query" title="Aufgabenstellung: Einfache SQL-Query">Aufgabenstellung: Einfache SQL-Query</a></li>
+<li><a href="#Optional-mehr-Daten-mit-einem-Join" title="Optional: mehr Daten mit einem Join">Optional: mehr Daten mit einem Join</a></li>
+</ul>
+</li>
+<li><a href="#Teil-4-Liste-aller-Artists" title="Teil 4. Liste aller Artists">Teil 4. Liste aller Artists</a><ul class="nav">
+<li><a href="#Aufgabe-neue-Route" title="Aufgabe: neue Route">Aufgabe: neue Route</a></li>
+<li><a href="#Optional-dbeach-statt-For-Schleife" title="Optional: db.each() statt For-Schleife">Optional: db.each() statt For-Schleife</a></li>
+</ul>
+</li>
+<li><a href="#Teil-5-Kür-Erweiterungen-optional" title="Teil 5. Kür: Erweiterungen! (optional)">Teil 5. Kür: Erweiterungen! (optional)</a></li>
+<li><a href="#Teil-6-User-interface-mit-AJAX-und-JSON-optional" title="Teil 6. User interface mit AJAX und JSON (optional)">Teil 6. User interface mit AJAX und JSON (optional)</a><ul class="nav">
+<li><a href="#61-JSON-senden-Server-Teil" title="6.1 JSON senden (Server-Teil)">6.1 JSON senden (Server-Teil)</a></li>
+<li><a href="#62-JSON-verwenden-Browser-Teil-1" title="6.2 JSON verwenden (Browser-Teil 1)">6.2 JSON verwenden (Browser-Teil 1)</a></li>
+<li><a href="#63-Dynamische-Webapplikation-Browser-Teil-2" title="6.3 Dynamische Webapplikation (Browser-Teil 2)">6.3 Dynamische Webapplikation (Browser-Teil 2)</a></li>
+<li><a href="#64-Turtles-all-the-way-down-Browser-Teil-3" title="6.4 Turtles all the way down! (Browser-Teil 3)">6.4 Turtles all the way down! (Browser-Teil 3)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;"  >
+        <div class="toc"><ul class="nav">
+<li class=""><a href="#CC3-181206-Rundumschlag-Ein-Websystem" title="CC3 181206 Rundumschlag: Ein Websystem">CC3 181206 Rundumschlag: Ein Websystem</a><ul class="nav">
+<li><a href="#Organisatorisches" title="Organisatorisches">Organisatorisches</a></li>
+<li><a href="#Voraussetzungen" title="Voraussetzungen">Voraussetzungen</a></li>
+<li><a href="#Ziel" title="Ziel">Ziel</a></li>
+<li><a href="#Teil-0-Leseverständnis-und-Vorgehen" title="Teil 0. Leseverständnis und Vorgehen">Teil 0. Leseverständnis und Vorgehen</a></li>
+<li><a href="#Teil-1-Statische-Dateien-ausliefern" title="Teil 1. Statische Dateien ausliefern">Teil 1. Statische Dateien ausliefern</a><ul class="nav">
+<li><a href="#Einführung-Wiederholung-HTTP-Server" title="Einführung: Wiederholung HTTP Server">Einführung: Wiederholung HTTP Server</a></li>
+<li><a href="#Aufgabenstellung" title="Aufgabenstellung">Aufgabenstellung</a></li>
+</ul>
+</li>
+<li><a href="#Teil-2-Auf-verschiedene-URLs-unterschiedlich-reagieren" title="Teil 2. Auf verschiedene URLs unterschiedlich reagieren">Teil 2. Auf verschiedene URLs unterschiedlich reagieren</a><ul class="nav">
+<li><a href="#Einführung-Erinnerung-Query-Parameter" title="Einführung: Erinnerung Query-Parameter">Einführung: Erinnerung Query-Parameter</a></li>
+<li><a href="#Aufgabenstellung-1-Mit-dem-Pfadnamen-arbeiten" title="Aufgabenstellung 1: Mit dem Pfadnamen arbeiten">Aufgabenstellung 1: Mit dem Pfadnamen arbeiten</a></li>
+<li><a href="#Aufgabenstellung-2-Query-Parameter-auswerten" title="Aufgabenstellung 2: Query-Parameter auswerten">Aufgabenstellung 2: Query-Parameter auswerten</a></li>
+</ul>
+</li>
+<li><a href="#Teil-3-SQL-Queries" title="Teil 3. SQL-Queries">Teil 3. SQL-Queries</a><ul class="nav">
+<li><a href="#Wiederholung-SQLite" title="Wiederholung: SQLite">Wiederholung: SQLite</a></li>
+<li><a href="#Aufgabenstellung-Einfache-SQL-Query" title="Aufgabenstellung: Einfache SQL-Query">Aufgabenstellung: Einfache SQL-Query</a></li>
+<li><a href="#Optional-mehr-Daten-mit-einem-Join" title="Optional: mehr Daten mit einem Join">Optional: mehr Daten mit einem Join</a></li>
+</ul>
+</li>
+<li><a href="#Teil-4-Liste-aller-Artists" title="Teil 4. Liste aller Artists">Teil 4. Liste aller Artists</a><ul class="nav">
+<li><a href="#Aufgabe-neue-Route" title="Aufgabe: neue Route">Aufgabe: neue Route</a></li>
+<li><a href="#Optional-dbeach-statt-For-Schleife" title="Optional: db.each() statt For-Schleife">Optional: db.each() statt For-Schleife</a></li>
+</ul>
+</li>
+<li><a href="#Teil-5-Kür-Erweiterungen-optional" title="Teil 5. Kür: Erweiterungen! (optional)">Teil 5. Kür: Erweiterungen! (optional)</a></li>
+<li><a href="#Teil-6-User-interface-mit-AJAX-und-JSON-optional" title="Teil 6. User interface mit AJAX und JSON (optional)">Teil 6. User interface mit AJAX und JSON (optional)</a><ul class="nav">
+<li><a href="#61-JSON-senden-Server-Teil" title="6.1 JSON senden (Server-Teil)">6.1 JSON senden (Server-Teil)</a></li>
+<li><a href="#62-JSON-verwenden-Browser-Teil-1" title="6.2 JSON verwenden (Browser-Teil 1)">6.2 JSON verwenden (Browser-Teil 1)</a></li>
+<li><a href="#63-Dynamische-Webapplikation-Browser-Teil-2" title="6.3 Dynamische Webapplikation (Browser-Teil 2)">6.3 Dynamische Webapplikation (Browser-Teil 2)</a></li>
+<li><a href="#64-Turtles-all-the-way-down-Browser-Teil-3" title="6.4 Turtles all the way down! (Browser-Teil 3)">6.4 Turtles all the way down! (Browser-Teil 3)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+    <script>
+        var markdown = $(".markdown-body");
+        //smooth all hash trigger scrolling
+        function smoothHashScroll() {
+            var hashElements = $("a[href^='#']").toArray();
+            for (var i = 0; i < hashElements.length; i++) {
+                var element = hashElements[i];
+                var $element = $(element);
+                var hash = element.hash;
+                if (hash) {
+                    $element.on('click', function (e) {
+                        // store hash
+                        var hash = this.hash;
+                        if ($(hash).length <= 0) return;
+                        // prevent default anchor click behavior
+                        e.preventDefault();
+                        // animate
+                        $('body, html').stop(true, true).animate({
+                            scrollTop: $(hash).offset().top
+                        }, 100, "linear", function () {
+                            // when done, add hash to url
+                            // (default click behaviour)
+                            window.location.hash = hash;
+                        });
+                    });
+                }
+            }
+        }
+
+        smoothHashScroll();
+        var toc = $('.ui-toc');
+        var tocAffix = $('.ui-affix-toc');
+        var tocDropdown = $('.ui-toc-dropdown');
+        //toc
+        tocDropdown.click(function (e) {
+            e.stopPropagation();
+        });
+
+        var enoughForAffixToc = true;
+
+        function generateScrollspy() {
+            $(document.body).scrollspy({
+                target: ''
+            });
+            $(document.body).scrollspy('refresh');
+            if (enoughForAffixToc) {
+                toc.hide();
+                tocAffix.show();
+            } else {
+                tocAffix.hide();
+                toc.show();
+            }
+            $(document.body).scroll();
+        }
+
+        function windowResize() {
+            //toc right
+            var paddingRight = parseFloat(markdown.css('padding-right'));
+            var right = ($(window).width() - (markdown.offset().left + markdown.outerWidth() - paddingRight));
+            toc.css('right', right + 'px');
+            //affix toc left
+            var newbool;
+            var rightMargin = (markdown.parent().outerWidth() - markdown.outerWidth()) / 2;
+            //for ipad or wider device
+            if (rightMargin >= 133) {
+                newbool = true;
+                var affixLeftMargin = (tocAffix.outerWidth() - tocAffix.width()) / 2;
+                var left = markdown.offset().left + markdown.outerWidth() - affixLeftMargin;
+                tocAffix.css('left', left + 'px');
+            } else {
+                newbool = false;
+            }
+            if (newbool != enoughForAffixToc) {
+                enoughForAffixToc = newbool;
+                generateScrollspy();
+            }
+        }
+        $(window).resize(function () {
+            windowResize();
+        });
+        $(document).ready(function () {
+            windowResize();
+            generateScrollspy();
+        });
+
+        //remove hash
+        function removeHash() {
+            window.location.hash = '';
+        }
+
+        var backtotop = $('.back-to-top');
+        var gotobottom = $('.go-to-bottom');
+
+        backtotop.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToTop)
+                scrollToTop();
+            removeHash();
+        });
+        gotobottom.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToBottom)
+                scrollToBottom();
+            removeHash();
+        });
+
+        var toggle = $('.expand-toggle');
+        var tocExpand = false;
+
+        checkExpandToggle();
+        toggle.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            tocExpand = !tocExpand;
+            checkExpandToggle();
+        })
+
+        function checkExpandToggle () {
+            var toc = $('.ui-toc-dropdown .toc');
+            var toggle = $('.expand-toggle');
+            if (!tocExpand) {
+                toc.removeClass('expand');
+                toggle.text('Expand all');
+            } else {
+                toc.addClass('expand');
+                toggle.text('Collapse all');
+            }
+        }
+
+        function scrollToTop() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: 0
+            }, 100, "linear");
+        }
+
+        function scrollToBottom() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: $(document.body)[0].scrollHeight
+            }, 100, "linear");
+        }
+    </script>
+</body>
+
+</html>
